@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image: url('./assets/images/elli0t.gif'); /* Add your background image URL here */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #8cd3f5;
+            animation: slideInDown 1s ease-in-out;
+        }
+
+        p {
+            color: #a6a6a6;
+            margin-bottom: 20px;
+            animation: slideInUp 1s ease-in-out;
+        }
+
+        .countdown {
+            font-size: 24px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .countdown span {
+            margin: 0 10px;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #999999;
+            animation: slideInUp 1s ease-in-out;
+        }
+
+        .glitch {
+            color: #8cd3f5;
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip: rect(0, 100%, 0, 0);
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #0e0e0e;
+            animation: glitch 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: 2px 0 #0e0e0e;
+            animation: glitch 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip: rect(90px, 9999px, 74px, 0);
+            }
+
+            5% {
+                clip: rect(10px, 9999px, 8px, 0);
+            }
+
+            10% {
+                clip: rect(22px, 9999px, 8px, 0);
+            }
+
+            15% {
+                clip: rect(15px, 9999px, 82px, 0);
+            }
+
+            20% {
+                clip: rect(30px, 9999px, 26px, 0);
+            }
+
+            25% {
+                clip: rect(78px, 9999px, 72px, 0);
+            }
+
+            30% {
+                clip: rect(60px, 9999px, 89px, 0);
+            }
+
+            35% {
+                clip: rect(84px, 9999px, 19px, 0);
+            }
+
+            40% {
+                clip: rect(21px, 9999px, 25px, 0);
+            }
+
+            45% {
+                clip: rect(62px, 9999px, 22px, 0);
+            }
+
+            50% {
+                clip: rect(72px, 9999px, 60px, 0);
+            }
+
+            55% {
+                clip: rect(47px, 9999px, 34px, 0);
+            }
+
+            60% {
+                clip: rect(31px, 9999px, 45px, 0);
+            }
+
+            65% {
+                clip: rect(12px, 9999px, 60px, 0);
+            }
+
+            70% {
+                clip: rect(38px, 9999px, 13px, 0);
+            }
+
+            75% {
+                clip: rect(70px, 9999px, 48px, 0);
+            }
+
+            80% {
+                clip: rect(42px, 9999px, 69px, 0);
+            }
+
+            85% {
+                clip: rect(86px, 9999px, 13px, 0);
+            }
+
+            90% {
+                clip: rect(32px, 9999px, 21px, 0);
+            }
+
+            95% {
+                clip: rect(12px, 9999px, 65px, 0);
+            }
+
+            100% {
+                clip: rect(93px, 9999px, 14px, 0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch" data-text="Hello, friend">Hello, friend</h1>
+        <p>We are planning something big.</p>
+        <div class="countdown">
+            <span id="days"></span>
+            <span id="hours"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+        </div>
+        <p class="message">Stay tuned for updates!</p>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Feb 28, 2024 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+
+            // Get the current date and time
+            var now = new Date().getTime();
+
+            // Calculate the remaining time
+            var distance = countDownDate - now;
+
+            // Calculate days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById("days").innerHTML = days + "d ";
+            document.getElementById("hours").innerHTML = hours + "h ";
+            document.getElementById("minutes").innerHTML = minutes + "m ";
+            document.getElementById("seconds").innerHTML = seconds + "s ";
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "";
+                document.getElementById("hours").innerHTML = "";
+                document.getElementById("minutes").innerHTML = "";
+                document.getElementById("seconds").innerHTML = "";
+                document.querySelector('.message').innerHTML = "We're live now!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
