@@ -1,6 +1,3 @@
-My first HTML project : personal portfolio website. The website, which highlights my cybersecurity skills, experience, education, and certifications, is responsive and features animated components and hover effects. an introduction to my experience and expertise in the sector
-
-
 # Portfolio Website
 
 ![portfolio](https://github.com/nijithneo/portfolio/assets/108510671/abc27004-3d58-4fa9-9c0c-85272a8066f2)
