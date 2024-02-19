@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![portfolio](https://github.com/nijithneo/portfolio/assets/108510671/abc27004-3d58-4fa9-9c0c-85272a8066f2)
+![Screenshot from 2024-02-19 14-47-34](https://github.com/nijithneo/portfolio/assets/108510671/b5856b66-d8c0-44a8-ad9f-431cb2551f3a)
 
 This is my first HTML project, a portfolio website showcasing my skills, experience, education, and certifications in the field of cybersecurity.
 
